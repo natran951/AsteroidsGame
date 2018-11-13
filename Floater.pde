@@ -20,7 +20,7 @@ abstract class Floater {   //Do NOT modify the Floater class! Make changes in th
   //Accelerates the floater in the direction it is pointing (myPointDirection)   
   public void accelerate (double dAmount) {          
     //converts current direction the floater is pointing to radians    
-    double dRadians =myPointDirection*(Math.PI/180);     
+    double dRadians = myPointDirection*(Math.PI/180);     
     //changes coordinates of direction of travel    
     myDirectionX += ((dAmount) * Math.cos(dRadians));    
     myDirectionY += ((dAmount) * Math.sin(dRadians));       
@@ -51,7 +51,7 @@ abstract class Floater {   //Do NOT modify the Floater class! Make changes in th
   }   
   public void show () {  //Draws the floater at the current position     
     fill(myColor);   
-    stroke(myColor);    
+    stroke(myColor);   
     
     //translates (x,y) center of the ship to the correct position
     translate((float)myCenterX, (float)myCenterY);
