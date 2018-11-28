@@ -11,8 +11,8 @@ class Asteroid extends Floater {
     	myCenterX = (Math.random() * 600);
     	myCenterY = (Math.random() * 600);
     	myPointDirection = (Math.random() * 361);
-    	myDirectionX = Math.random() * 5 - 2;
-    	myDirectionY = Math.random() * 5 - 2;
+    	myDirectionX = Math.random() * 4.5 - 2.25;
+    	myDirectionY = Math.random() * 4.5 - 2.25;
 	}
 
 	public void setX(int x) {

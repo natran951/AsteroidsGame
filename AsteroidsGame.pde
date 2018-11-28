@@ -1,15 +1,19 @@
 Spaceship bob = new Spaceship();
 Star[] stars = new Star[125];
-Asteroid[] asts = new Asteroid[37];
-Asteroid ast = new Asteroid();
+//Asteroid[] asts = new Asteroid[37];
+
+ArrayList<Asteroid> rocks = new ArrayList<Asteroid>();
 
 public void setup(){
 	size(600,600);
 	for (int i = 0; i < stars.length; i++) {
 		stars[i] = new Star();
 	}
-	for (int i = 0 ; i < asts.length ; i++) {
-		asts[i] = new Asteroid();
+	// for (int i = 0 ; i < asts.length ; i++) {
+	// 	asts[i] = new Asteroid();
+	// }
+	for (int i = 0 ; i < 38 ; i++) {
+		rocks.add(i, new Asteroid());
 	}
 }
 public void draw(){
@@ -17,12 +21,21 @@ public void draw(){
   	for (int i = 0; i < stars.length; i++) {
   		stars[i].show();
   	}
-  	for (int i = 0 ; i < asts.length ; i++) {
-  		asts[i].move();
-  		asts[i].show();
+  	for (int i = 0; i < rocks.size() ; i++) {
+  		rocks.get(i).show();
+  		rocks.get(i).move();
+  		float d = dist(bob.getX(), bob.getY(), rocks.get(i).getX(), rocks.get(i).getY());
+  		if (d < 18.5) {
+  			rocks.remove(i);
+  		}
   	}
-	ast.move();
-  	ast.show();
+  	
+  	// Something dist() to remove a rock;
+
+  	// for (int i = 0 ; i < asts.length ; i++) {
+  	// 	asts[i].move();
+  	// 	asts[i].show();
+  	// }
   	bob.show();
   	bob.move();
 }
